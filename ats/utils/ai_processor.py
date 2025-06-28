@@ -7,7 +7,16 @@ import numpy as np
 from typing import List, Dict, Optional
 from sklearn.metrics.pairwise import cosine_similarity
 from rapidfuzz import fuzz, process
+import subprocess
 
+# Auto-download spaCy model
+try:
+    nlp = spacy.load("en_core_web_lg")
+except OSError:
+    print("Downloading spaCy model...")
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_lg"])
+    nlp = spacy.load("en_core_web_lg")
+    
 class ResumeAnalyzer:
     def __init__(self, skills_csv_path: str = None):
         try:
