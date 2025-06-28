@@ -140,7 +140,7 @@ JOB_API_BASE_URL = os.environ.get('JOB_API_BASE_URL', 'http://api.jobprovider.co
 JOB_API_KEY = os.environ.get('JOB_API_KEY', 'default-api-key')
 
 # NLP Model Configuration
-SPACY_MODEL = os.environ.get('SPACY_MODEL', 'en_core_web_lg')
+SPACY_MODEL = os.environ.get('SPACY_MODEL', 'en_core_web_sm')
 
 # File upload settings
 FILE_UPLOAD_MAX_MEMORY_SIZE = 1024 * 1024 * 10  # 10MB
