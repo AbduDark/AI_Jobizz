@@ -11,16 +11,16 @@ import subprocess
 
 # Auto-download spaCy model
 try:
-    nlp = spacy.load("en_core_web_lg")
+    nlp = spacy.load("en_core_web_sm")
 except OSError:
     print("Downloading spaCy model...")
-    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_lg"])
-    nlp = spacy.load("en_core_web_lg")
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+    nlp = spacy.load("en_core_web_sm")
     
 class ResumeAnalyzer:
     def __init__(self, skills_csv_path: str = None):
         try:
-            self.nlp = spacy.load("en_core_web_lg")
+            self.nlp = spacy.load("en_core_web_sm")
         except OSError:
             raise RuntimeError(
                 "SpaCy model 'en_core_web_lg' not found. Install via: python -m spacy download en_core_web_lg"
